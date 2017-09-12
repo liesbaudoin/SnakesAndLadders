@@ -12,7 +12,7 @@ public class SnakesAndLaddersTest {
 
     @Before
     public void setup() {
-        snakesAndLadders = new SnakesAndLadders();
+        snakesAndLadders = new SnakesAndLadders("player1");
 
     }
 
@@ -43,13 +43,13 @@ public class SnakesAndLaddersTest {
         }
     }
 
-    @Test
-    public void movesAmountOfDie() {
-        Die die = new Die();
-        int value = die.roll();
-        snakesAndLadders.move(value);
-        Assert.assertEquals(value + FIRST_SQUARE, snakesAndLadders.getSquare());
-    }
+//    @Test
+//    public void movesAmountOfDie() {
+//        Die die = new Die();
+//        int value = die.roll();
+//        snakesAndLadders.move(value);
+//        Assert.assertEquals(value + FIRST_SQUARE, snakesAndLadders.getSquare());
+//    }
 
     @Test
     public void playerWinsAtHundred() {

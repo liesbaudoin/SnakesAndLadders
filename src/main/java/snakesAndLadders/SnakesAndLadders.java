@@ -8,11 +8,13 @@ public class SnakesAndLadders {
     private boolean isWinner = false;
     private HashMap<Integer, Integer> snakeMap = new HashMap<Integer, Integer>();
     private HashMap<Integer, Integer> ladderMap = new HashMap<Integer, Integer>();
+    private String name;
 
-    public SnakesAndLadders() {
+    public SnakesAndLadders(String name) {
+        this.name = name;
         this.square = 1;
         snakeMap.put(12, 2);
-        ladderMap.put(5,10);
+        ladderMap.put(5, 10);
     }
 
 
@@ -30,10 +32,10 @@ public class SnakesAndLadders {
 
     private int calculateNewSquare(int amount) {
         int newSquare = square + amount;
-        if (snakeMap.containsKey(newSquare)){
+        if (snakeMap.containsKey(newSquare)) {
             newSquare = snakeMap.get(newSquare);
         }
-        if (ladderMap.containsKey(newSquare)){
+        if (ladderMap.containsKey(newSquare)) {
             newSquare = ladderMap.get(newSquare);
         }
         return newSquare;
@@ -51,7 +53,13 @@ public class SnakesAndLadders {
         return square;
     }
 
+    public String getName() {
+        return name;
+    }
+
     void setSquare(int square) {
         this.square = square;
     }//package private
+
+
 }
